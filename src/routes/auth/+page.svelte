@@ -177,13 +177,19 @@
 	{#if loaded}
 		<div class="fixed m-10 z-50">
 			<div class="flex space-x-2">
-				<div class=" self-center">
+				<div class=" self-center flex items-center gap-2">
 					<img
 						id="logo"
 						crossorigin="anonymous"
 						src="{WEBUI_BASE_URL}/static/splash.png"
 						class=" w-6 rounded-full"
 						alt=""
+					/>
+					<img
+						crossorigin="anonymous"
+						src="{WEBUI_BASE_URL}/static/ltp-logo.png"
+						class=" w-6"
+						alt="LTP logo"
 					/>
 				</div>
 			</div>

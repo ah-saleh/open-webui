@@ -24,12 +24,20 @@
 					}
 				}}
 			>
-				<img
-					src="/static/splash.png"
-					class="size-11 dark:invert p-0.5"
-					alt="logo"
-					draggable="false"
-				/>
+				<div class="flex items-center gap-1">
+					<img
+						src="/static/splash.png"
+						class="size-6 dark:invert p-0.5"
+						alt="logo"
+						draggable="false"
+					/>
+					<img
+						src="/static/ltp-logo.png"
+						class="size-6 p-0.5"
+						alt="LTP logo"
+						draggable="false"
+					/>
+				</div>
 			</button>
 		</Tooltip>
 	</div>
@@ -48,12 +56,20 @@
 				selected = '';
 			}}
 		>
-			<img
-				src="/static/favicon.png"
-				class="size-10 {selected === '' ? 'rounded-2xl' : 'rounded-full'}"
-				alt="logo"
-				draggable="false"
-			/>
+			<div class="flex items-center">
+				<img
+					src="/static/favicon.png"
+					class="size-8 {selected === '' ? 'rounded-2xl' : 'rounded-full'}"
+					alt="logo"
+					draggable="false"
+				/>
+				<img
+					src="/static/ltp-logo.png"
+					class="size-4 -ml-2"
+					alt="LTP logo"
+					draggable="false"
+				/>
+			</div>
 		</button>
 	</div>
 

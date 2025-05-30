@@ -38,7 +38,7 @@
 				const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 				if (!localStorage?.theme) {
-					localStorage.theme = 'system';
+					localStorage.theme = 'ltp-dark';
 				}
 
 				if (localStorage.theme === 'system') {
@@ -58,6 +58,10 @@
 					document.documentElement.classList.add('dark');
 					document.documentElement.classList.add('her');
 					metaThemeColorTag.setAttribute('content', '#983724');
+				} else if (localStorage.theme === 'ltp-dark') {
+					document.documentElement.classList.add('dark');
+					document.documentElement.classList.add('ltp-dark');
+					metaThemeColorTag.setAttribute('content', '#1F1B5C');
 				} else {
 					document.documentElement.classList.add('dark');
 					metaThemeColorTag.setAttribute('content', '#171717');
