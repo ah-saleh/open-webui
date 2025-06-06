@@ -32,7 +32,7 @@
 						draggable="false"
 					/>
 					<img
-						src="/static/ltp-logo.png"
+						src="/ltp-logo.png"
 						class="size-6 p-0.5"
 						alt="LTP logo"
 						draggable="false"
@@ -64,7 +64,7 @@
 					draggable="false"
 				/>
 				<img
-					src="/static/ltp-logo.png"
+					src="/ltp-logo.png"
 					class="size-4 -ml-2"
 					alt="LTP logo"
 					draggable="false"

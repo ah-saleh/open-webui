@@ -187,7 +187,7 @@
 					/>
 					<img
 						crossorigin="anonymous"
-						src="{WEBUI_BASE_URL}/static/ltp-logo.png"
+						src="/ltp-logo.png"
 						class=" w-6"
 						alt="LTP logo"
 					/>
