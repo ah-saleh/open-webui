@@ -1,7 +1,9 @@
 /* LTP Dark Theme for Open WebUI */
 /* Based on LTP brand colors: Deep Purple (#1F1B5C), Orange (#F26A3C), Teal (#00A19C) */
 
-:root {
+/* Define LTP color palette */
+.ltp-dark {
+  /* Primary Colors */
   --ltp-purple: #1F1B5C;
   --ltp-purple-dark: #16143F;
   --ltp-purple-light: #2A2570;
@@ -11,124 +13,191 @@
   --ltp-teal: #00A19C;
   --ltp-teal-dark: #008580;
   --ltp-teal-light: #00BBB5;
+  
+  /* Background Colors */
   --ltp-bg-primary: #0A0A0F;
   --ltp-bg-secondary: #12121A;
   --ltp-bg-tertiary: #1A1A25;
+  --ltp-bg-chat: #15151F;
+  
+  /* Text Colors */
   --ltp-text-primary: #F0F0F5;
   --ltp-text-secondary: #B8B8C5;
   --ltp-text-tertiary: #8888A0;
+  
+  /* Border Colors */
+  --ltp-border: #2A2A35;
+  --ltp-border-light: #353545;
 }
 
-/* Global text color */
-.ltp-dark * {
+/* Override Tailwind color variables */
+.ltp-dark {
+  --color-gray-50: #1A1A25;
+  --color-gray-100: #1A1A25;
+  --color-gray-200: #2A2A35;
+  --color-gray-300: #8888A0;
+  --color-gray-400: #B8B8C5;
+  --color-gray-500: #B8B8C5;
+  --color-gray-600: #12121A;
+  --color-gray-700: #12121A;
+  --color-gray-800: #0A0A0F;
+  --color-gray-850: #0A0A0F;
+  --color-gray-900: #0A0A0F;
+  --color-gray-950: #000000;
+}
+
+/* Base styles */
+.ltp-dark,
+.ltp-dark body {
+  background-color: var(--ltp-bg-primary) !important;
   color: var(--ltp-text-primary) !important;
 }
 
-/* Main app background */
-.ltp-dark .app > * {
+/* Main layout areas */
+.ltp-dark .w-full.h-full,
+.ltp-dark .min-h-screen {
   background-color: var(--ltp-bg-primary) !important;
 }
 
-/* Navigation/Sidebar background */
-.ltp-dark #nav,
-.ltp-dark .py-2\.5.my-auto.flex.flex-col.justify-between.h-screen {
-  background: var(--ltp-bg-secondary);
-}
-
-/* Card/Modal backgrounds */
-.ltp-dark .bg-white.dark\:bg-gray-800,
-.ltp-dark .m-auto.rounded-xl.max-w-full.w-\[40rem\].mx-2.bg-gray-50.dark\:bg-gray-900.shadow-3xl {
-  background: var(--ltp-bg-tertiary) !important;
-}
-
-/* Chat input area */
-.ltp-dark #chat-input {
-  background: var(--ltp-purple-dark);
-  border: 1px solid var(--ltp-purple-light);
-  margin: 0.5rem;
-  padding: 0.75rem;
-  border-radius: 12px;
-}
-
-/* Buttons - Primary (Orange accent) */
-.ltp-dark .px-4.py-2.bg-emerald-600.hover\:bg-emerald-700.text-gray-100.transition.rounded,
-.ltp-dark .bg-black.text-white.hover\:bg-gray-900.dark\:bg-white.dark\:text-black.dark\:hover\:bg-gray-100.transition.rounded-lg.p-1.mr-0\.5.w-7.h-7.self-center {
-  background-color: var(--ltp-orange) !important;
-  transition: all 0.2s ease;
-}
-
-.ltp-dark .px-4.py-2.bg-emerald-600.hover\:bg-emerald-700.text-gray-100.transition.rounded:hover,
-.ltp-dark .bg-black.text-white.hover\:bg-gray-900.dark\:bg-white.dark\:text-black.dark\:hover\:bg-gray-100.transition.rounded-lg.p-1.mr-0\.5.w-7.h-7.self-center:hover {
-  background-color: var(--ltp-orange-dark) !important;
-  transform: translateY(-1px);
-}
-
-/* Secondary buttons */
-.ltp-dark .text-white.bg-gray-100.dark\:text-gray-800.dark\:bg-gray-600.disabled.transition.rounded-lg.p-1.mr-0\.5.w-7.h-7.self-center {
-  background-color: var(--ltp-purple-light) !important;
-  border: 1px solid var(--ltp-purple);
-}
-
-/* Hover states */
-.ltp-dark .hover\:bg-gray-900:hover,
-.ltp-dark .flex.py-2\.5.px-3\.5.w-full.hover\:bg-gray-800.transition:hover {
-  background: var(--ltp-purple-light) !important;
-}
-
-/* Selected/Active states */
-.ltp-dark .w-full.flex.justify-between.rounded-md.px-3.py-2.hover\:bg-gray-900.bg-gray-900.transition.whitespace-nowrap.text-ellipsis {
-  background-color: var(--ltp-purple) !important;
-  border-left: 3px solid var(--ltp-teal);
-}
-
-/* Input fields */
-.ltp-dark .w-full.rounded.p-4.text-sm.dark\:text-gray-300.dark\:bg-gray-800.outline-none.resize-none,
-.ltp-dark .w-full.rounded.py-2.px-4.text-sm.dark\:text-gray-300.dark\:bg-gray-800.outline-none.svelte-1vx7r9s {
+/* Sidebar/Navigation */
+.ltp-dark aside,
+.ltp-dark nav,
+.ltp-dark [role="navigation"] {
   background-color: var(--ltp-bg-secondary) !important;
-  border: 1px solid var(--ltp-purple-dark);
+  border-color: var(--ltp-border) !important;
 }
 
-.ltp-dark .w-full.rounded.p-4.text-sm.dark\:text-gray-300.dark\:bg-gray-800.outline-none.resize-none:focus,
-.ltp-dark .w-full.rounded.py-2.px-4.text-sm.dark\:text-gray-300.dark\:bg-gray-800.outline-none.svelte-1vx7r9s:focus {
-  border-color: var(--ltp-teal) !important;
-  box-shadow: 0 0 0 2px rgba(0, 161, 156, 0.2);
-}
-
-/* Dropdown menus */
-.ltp-dark #dropdownDots,
-.ltp-dark .text-xs.text-gray-700.uppercase.bg-gray-50.dark\:bg-gray-700.dark\:text-gray-400 {
+/* Modal/Dialog backgrounds - Fix for white modals */
+.ltp-dark [role="dialog"],
+.ltp-dark .fixed.inset-0,
+.ltp-dark .fixed.z-50,
+.ltp-dark .modal,
+.ltp-dark .bg-white,
+.ltp-dark .bg-gray-50 {
   background-color: var(--ltp-bg-tertiary) !important;
-  border: 1px solid var(--ltp-purple-dark);
-}
-
-/* Chat bubbles/messages */
-.ltp-dark .message.svelte-1nauejd {
   color: var(--ltp-text-primary) !important;
 }
 
-/* Code blocks */
-.ltp-dark pre,
-.ltp-dark code {
-  background-color: var(--ltp-bg-secondary) !important;
-  border: 1px solid var(--ltp-purple-dark);
+/* Modal overlay */
+.ltp-dark .bg-black.bg-opacity-50,
+.ltp-dark .bg-gray-900.bg-opacity-50 {
+  background-color: rgba(0, 0, 0, 0.7) !important;
 }
 
-/* Links - use teal accent */
+/* Cards and containers */
+.ltp-dark .bg-gray-100,
+.ltp-dark .bg-gray-200,
+.ltp-dark .bg-gray-800,
+.ltp-dark .bg-gray-900 {
+  background-color: var(--ltp-bg-tertiary) !important;
+}
+
+/* Input fields and textareas */
+.ltp-dark input,
+.ltp-dark textarea,
+.ltp-dark select,
+.ltp-dark .bg-gray-700 {
+  background-color: var(--ltp-bg-secondary) !important;
+  border: 1px solid var(--ltp-border) !important;
+  color: var(--ltp-text-primary) !important;
+}
+
+.ltp-dark input:focus,
+.ltp-dark textarea:focus,
+.ltp-dark select:focus {
+  border-color: var(--ltp-teal) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(0, 161, 156, 0.2) !important;
+}
+
+/* Chat input area - specific fix */
+.ltp-dark #chat-input,
+.ltp-dark .chat-input,
+.ltp-dark [contenteditable="true"] {
+  background-color: var(--ltp-purple-dark) !important;
+  border: 1px solid var(--ltp-purple-light) !important;
+  color: var(--ltp-text-primary) !important;
+}
+
+/* Buttons */
+.ltp-dark button {
+  color: var(--ltp-text-primary) !important;
+}
+
+/* Primary buttons (Save, Submit, etc.) */
+.ltp-dark .bg-black,
+.ltp-dark .bg-emerald-600,
+.ltp-dark .bg-blue-600,
+.ltp-dark button[type="submit"] {
+  background-color: var(--ltp-orange) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.ltp-dark .bg-black:hover,
+.ltp-dark .bg-emerald-600:hover,
+.ltp-dark .bg-blue-600:hover,
+.ltp-dark button[type="submit"]:hover {
+  background-color: var(--ltp-orange-dark) !important;
+}
+
+/* Secondary buttons */
+.ltp-dark .bg-gray-600,
+.ltp-dark .bg-gray-700 {
+  background-color: var(--ltp-purple-light) !important;
+  color: var(--ltp-text-primary) !important;
+}
+
+/* Text colors */
+.ltp-dark .text-gray-500,
+.ltp-dark .text-gray-600 {
+  color: var(--ltp-text-secondary) !important;
+}
+
+.ltp-dark .text-gray-400 {
+  color: var(--ltp-text-tertiary) !important;
+}
+
+.ltp-dark .text-gray-900,
+.ltp-dark .text-black {
+  color: var(--ltp-text-primary) !important;
+}
+
+/* Links */
 .ltp-dark a {
   color: var(--ltp-teal) !important;
 }
 
 .ltp-dark a:hover {
   color: var(--ltp-teal-light) !important;
-  text-decoration: underline;
 }
 
-/* Icons - use teal accent */
-.ltp-dark .w-4.h-4 {
-  fill: var(--ltp-teal) !important;
+/* Borders */
+.ltp-dark .border,
+.ltp-dark .border-gray-200,
+.ltp-dark .border-gray-300,
+.ltp-dark .border-gray-700,
+.ltp-dark .border-gray-800 {
+  border-color: var(--ltp-border) !important;
 }
 
-/* Scrollbar styling */
+/* Dropdown menus */
+.ltp-dark .dropdown,
+.ltp-dark [role="menu"],
+.ltp-dark .menu {
+  background-color: var(--ltp-bg-tertiary) !important;
+  border: 1px solid var(--ltp-border) !important;
+}
+
+/* Code blocks */
+.ltp-dark pre,
+.ltp-dark code {
+  background-color: var(--ltp-bg-secondary) !important;
+  border: 1px solid var(--ltp-border) !important;
+  color: var(--ltp-text-primary) !important;
+}
+
+/* Scrollbars */
 .ltp-dark ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -147,64 +216,76 @@
   background: var(--ltp-purple-light);
 }
 
-/* Chat area background gradient */
-.ltp-dark .bg-gradient-to-t.from-white.dark\:from-gray-800.from-40\%.pb-2 {
-  background: linear-gradient(to top, var(--ltp-bg-primary) 40%, transparent) !important;
+/* Chat message area */
+.ltp-dark .prose {
+  color: var(--ltp-text-primary) !important;
 }
 
-/* Search input */
-.ltp-dark #chat-search > * {
-  background-color: var(--ltp-bg-tertiary) !important;
-  border: 1px solid var(--ltp-purple-dark);
+.ltp-dark .prose h1,
+.ltp-dark .prose h2,
+.ltp-dark .prose h3,
+.ltp-dark .prose h4,
+.ltp-dark .prose h5,
+.ltp-dark .prose h6 {
+  color: var(--ltp-text-primary) !important;
 }
 
-/* Tab/pill backgrounds */
-.ltp-dark .px-2\.5.py-2\.5.min-w-fit.rounded-lg.flex-1.md\:flex-none.flex.text-right.transition.bg-gray-200.dark\:bg-gray-700 {
-  background-color: var(--ltp-purple-dark) !important;
+/* Toggle switches */
+.ltp-dark .bg-green-500,
+.ltp-dark .bg-green-600 {
+  background-color: var(--ltp-teal) !important;
 }
 
-.ltp-dark .px-2\.5.py-2\.5.min-w-fit.rounded-lg.flex-1.md\:flex-none.flex.text-right.transition.hover\:bg-gray-300.dark\:hover\:bg-gray-800:hover {
+/* Error states */
+.ltp-dark .bg-red-500,
+.ltp-dark .text-red-500 {
+  color: #FF6B6B !important;
+}
+
+/* Icons */
+.ltp-dark svg {
+  color: currentColor;
+}
+
+/* Placeholder text */
+.ltp-dark ::placeholder {
+  color: var(--ltp-text-tertiary) !important;
+  opacity: 1;
+}
+
+/* Focus states */
+.ltp-dark .focus\:ring-2:focus {
+  box-shadow: 0 0 0 2px rgba(0, 161, 156, 0.3) !important;
+}
+
+/* Hover states for interactive elements */
+.ltp-dark .hover\:bg-gray-100:hover,
+.ltp-dark .hover\:bg-gray-200:hover {
+  background-color: var(--ltp-purple-light) !important;
+}
+
+.ltp-dark .hover\:bg-gray-700:hover,
+.ltp-dark .hover\:bg-gray-800:hover {
   background-color: var(--ltp-purple) !important;
 }
 
-/* Loading/Progress indicators */
-.ltp-dark .svelte-11kvm4p {
-  --primary: var(--ltp-teal) !important;
-  --secondary: var(--ltp-bg-secondary) !important;
+/* Selected states */
+.ltp-dark .bg-gray-200.dark\:bg-gray-700 {
+  background-color: var(--ltp-purple) !important;
 }
 
-/* Toast notifications */
-.ltp-dark .svelte-1ee93ns {
-  --primary: var(--ltp-orange) !important;
-  --secondary: var(--ltp-text-primary) !important;
+/* Ensure all text is readable */
+.ltp-dark * {
+  color: inherit;
 }
 
-/* Modal overlays */
-.ltp-dark .base.enter.svelte-ug60r4 {
-  background-color: var(--ltp-bg-tertiary);
+/* Fix for specific UI elements that might have inline styles */
+.ltp-dark [style*="background-color: rgb(255, 255, 255)"],
+.ltp-dark [style*="background-color: white"] {
+  background-color: var(--ltp-bg-tertiary) !important;
 }
 
-/* Custom accent shadows */
-.ltp-dark .shadow-3xl {
-  box-shadow: 0 10px 40px -10px rgba(242, 106, 60, 0.2);
-}
-
-/* Border radius adjustments for modern look */
-.ltp-dark .scrollbar-hidden.relative.overflow-x-auto.whitespace-nowrap.svelte-3g4avz {
-  border-radius: 16px 16px 0 0;
-}
-
-/* LTP branding gradient accent */
-.ltp-dark .ltp-gradient {
-  background: linear-gradient(135deg, var(--ltp-purple) 0%, var(--ltp-teal) 100%);
-}
-
-/* Orange accent for important actions */
-.ltp-dark .ltp-accent {
-  background-color: var(--ltp-orange) !important;
-  color: white !important;
-}
-
-.ltp-dark .ltp-accent:hover {
-  background-color: var(--ltp-orange-dark) !important;
+.ltp-dark [style*="color: rgb(0, 0, 0)"],
+.ltp-dark [style*="color: black"] {
+  color: var(--ltp-text-primary) !important;
 }
